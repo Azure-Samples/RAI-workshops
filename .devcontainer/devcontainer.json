@@ -1,0 +1,10 @@
+{
+    "name": "Azure AI Content Safety environment",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+    "customizations": {
+        "vscode": {
+          "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
+        }
+      }
+}
