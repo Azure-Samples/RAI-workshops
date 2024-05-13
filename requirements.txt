@@ -1,4 +1,4 @@
 azure-ai-contentsafety
 jupyter
 requests
-pyton-dotenv
+python-dotenv
