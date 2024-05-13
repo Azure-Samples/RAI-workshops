@@ -2,3 +2,5 @@ azure-ai-contentsafety
 jupyter
 requests
 python-dotenv
+ipython
+ipykernel
