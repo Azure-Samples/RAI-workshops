@@ -15,3 +15,4 @@ Provided below is a list of currently published modules:
 | Title  | Link | Description      |
 |-------|-----|-----------|
 | Moderate content and detect harm with Azure AI Content Safety Studio | [aka.ms/aacs-studio-workshop](https://aka.ms/aacs-studio-workshop)  | Learn how to choose and build a content moderation system in the Azure AI Content Safety Studio.  |
+| Moderate Content and Detect Harm with Azure AI Content Safety | [aka.ms/aacs-code-workshop](https://aka.ms/aacs-code-workshop)  | Learn how to choose and build a content moderation system with Azure AI Content Safety via code.  |
