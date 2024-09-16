@@ -6,7 +6,9 @@ Our workshops require access to Azure OpenAI Service. Azure OpenAI Service is cu
 
 ## Slide decks
 
-Slide decks are available to accompany each workshop and provide a high-level introduction to the subject matter. Speaker notes are provided in each slide deck. You can find slide decks within the [slide-decks](slide-decks/) folder of this repository. The slide decks are named according to the workshop title.
+A general Responsible AI slide deck is available to accompany our workshops and provide a high-level introduction to Microsoft's responsible AI tooling. Speaker notes are provided within the slide deck. You can find slide deck within the [slide-decks](slide-decks/) folder of this repository.
+
+The slides are provided in order. However, you're encouraged to present the slides that are relevant for your specific workshop. We've also included a title slide for each workshop listed in this repository.
 
 ## List of workshops
 
@@ -16,3 +18,4 @@ Provided below is a list of currently published modules:
 |-------|-----|-----------|
 | Moderate content and detect harm with Azure AI Content Safety Studio | [aka.ms/aacs-studio-workshop](https://aka.ms/aacs-studio-workshop)  | Learn how to choose and build a content moderation system in the Azure AI Content Safety Studio.  |
 | Moderate Content and Detect Harm with Azure AI Content Safety | [aka.ms/aacs-code-workshop](https://aka.ms/aacs-code-workshop)  | Learn how to choose and build a content moderation system with Azure AI Content Safety via code.  |
+| Measure and mitigate risks for a generative AI app in Azure AI Studio | [aka.ms/measure-mitigate-workshop](https://aka.ms/aacs-code-workshop)  | Learn how to measure and mitigate risks for a generative AI app leveraging responsible AI tools and features within Azure AI Studio.  |
