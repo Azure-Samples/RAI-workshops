@@ -1,5 +1,5 @@
 # Train the Trainer Resources
-Responsible AI workshops are available on [Microsoft Learn](https://learn.microsoft.com/training) as training modules. Learners will earn a badge upon completion of the module and can save their earned badges by creating a profile. If you're facilitating a workshop which leverages our Microsoft Learn training modules, we encourage you to also leverage the accompanying slide deck provided in this repository.
+Responsible AI workshops are available on [Microsoft Learn](https://learn.microsoft.com/training) as training modules. Learners will earn a badge upon completion of the module and can save their earned badges by creating a profile. If you're facilitating a workshop which leverages our Microsoft Learn training modules, we encourage you to also leverage the accompanying [slide deck](slide-decks/) provided in this repository.
 
 ## Slide decks
 
