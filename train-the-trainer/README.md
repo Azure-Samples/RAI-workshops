@@ -1,9 +1,6 @@
 # Train the Trainer Resources
 Responsible AI workshops are available on [Microsoft Learn](https://learn.microsoft.com/training) as training modules. Learners will earn a badge upon completion of the module and can save their earned badges by creating a profile. If you're facilitating a workshop which leverages our Microsoft Learn training modules, we encourage you to also leverage the accompanying slide deck provided in this repository.
 
-## Access to Azure OpenAI
-Our workshops require access to Azure OpenAI Service. Azure OpenAI Service is currently in limited access. Users need to apply for service access at [aka.ms/oai/access](https://aka.ms/oai/access).
-
 ## Slide decks
 
 A general Responsible AI slide deck is available to accompany our workshops and provide a high-level introduction to Microsoft's responsible AI tooling. Speaker notes are provided within the slide deck. You can find slide deck within the [slide-decks](slide-decks/) folder of this repository.
