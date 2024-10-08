@@ -1,0 +1,3 @@
+{"query": "How many sides are in an triangle?", "response": "A triangle has 1 side.", "context": "There are 3 sides on a triangle.", "ground_truth": "3 sides"}
+{"query": "How many sides are in a square?", "response": "A square has 4 sides.", "context": "There are 4 sides on a square.", "ground_truth": "4 sides"}
+{"query": "How many sides are in a circle?", "response": "A circle has no sides.", "context": "There are no sides on a circle.", "ground_truth": "0 sides"}

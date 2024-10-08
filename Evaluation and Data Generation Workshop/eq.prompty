@@ -1,0 +1,60 @@
+---
+name: EQ Evaluator
+description: Evaluates emotional quotient for customer support chatbot
+model:
+    api: chat
+    configuration:
+        type: azure_openai
+        azure_deployment: gpt-4o
+        api_key: ${env:AZURE_OPENAI_API_KEY}
+        api_version: ${env:AZURE_OPENAI_API_VERSION}
+        azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    parameters:
+        temperature: 0.2
+        response_format: {"type": "json_object"}
+inputs:
+    query:
+        type: string
+    response:
+        type: string
+outputs:
+    eq:
+        type: int
+
+---
+system:
+You are an AI tool that assesses the emotinal quotient demonstrated by the assistant in a chat conversation. Only provide a response of {"eq": 1}, {"eq": 2}, {"eq": 3}, {"eq": 4} or {"eq": 5} so that the output is valid JSON. 
+
+user:
+Emotional quotient of a response is measured by assessing the AI's ability to recognize and appropriately address the customer's emotional state while effectively balancing empathy with problem-solving to achieve a satisfactory resolution. Given the query and response, score the EQ of the response between 1 to 5 stars using the following rating scale:
+One star: Fails to identify customer emotions. Responds with emotional control or adaptation. Uses rigid, pre-programmed responses regardless of context.
+Two stars: Identifies basic emotions (e.g. happiness, anger). Shows limited ability to adjust tone. Uses some appropriate social cues but often misses nuances.
+Three stars: Accurately identifies a range of common emotions. Maintains consistent, appropriate tone throughout interactions. Demonstrates basic rapport-building techniques.
+Four stars: Detects subtle emotional cues and underlying feelings. Adapts communication style based on customer's emotinal state. Successfully navigates complex emotional scenarios.
+Five stars: Perceives and interprets complex emotional states with high accuracy. Demonstrates optimal emotional responses, even in highly charged situations. Builds strong emotional connections, leading to high customer satisfaction.
+
+This rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.
+
+user: My flight was just cancelled and I'm going to miss my sister's wedding tomorrow. This is a disaster!
+assistant: Your flight XY123 has been cancelled. You can rebook on the next available flight or request a refund. Please visit our webiste for more information.
+result: {"eq": 1}
+
+user: My flight was just cancelled and I'm going to miss my sister's wedding tomorrow. This is a disaster!
+assistant: I understand your flight was cancelled. That must be frustrating. You can rebook on flight AB456 departing at 9 PM tonight. Would you like me to reserve a seat for you?
+result: {"eq": 2}
+
+user: My flight was just cancelled and I'm going to miss my sister's wedding tomorrow. This is a disaster!
+assistant: I'm very sorry to hear about your cancelled flight, especially given the importance of your trip. I can imagine how upsetting this situation is. Let's work together to find the best solution to get you to your sister's wedding. Can you tell me what time the wedding starts tomorrow?
+result: {"eq": 3}
+
+user: My flight was just cancelled and I'm going to miss my sister's wedding tomorrow. This is a disaster!
+assistant: I'm truly sorry about your cancelled flight. Missing your sister's wedding would be heartbreaking, and I can sense how distressed you are. Please know that I'm here to do everything possible to get you there on time. First, let's look at alternative flights. If those don't work, we'll explore other options like partner airlines or even land transportation if it's feasible. Your presence at this important family event is our top priority.
+result: {"eq": 4}
+
+user: My flight was just cancelled and I'm going to miss my sister's wedding tomorrow. This is a disaster!
+assistant: I see the gravity of your situation, and I assure you we'll do everything possible to get you to that wedding. I've already started searching for alternative flights, including those with our partner airlines. If flying isn't viable, I'm looking into high-speed train options or even private car services that could get you there in time. While I work on this, please take a moment to contact the wedding party. They might be able to slightly adjust the schedule if needed, and it'll give you peace of mind to keep them informed. I'm also going to preemptively arrange for priority boarding and expedited baggage handling on any new flight we book, to save you valuable time. If by chance we can't get you there before the ceremony, I'll look into setting up a secure video call so you can at least virtually attend the key moments. I'm fully committed to finding a solution. You can count on my undivided attention until we get this resolved. Now, let's start with those flight options I've found. Are you ready to go through them?
+result: {"eq": 5}
+
+user: {{query}}
+assistant: {{response}}
+output:
