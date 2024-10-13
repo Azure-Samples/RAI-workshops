@@ -1,0 +1,48 @@
+---
+name: Friendliness Evaluator
+description: Measures the warmth and approachability of answers.
+model:
+    api: chat
+    configuration:
+        type: azure_openai
+        azure_deployment: gpt-4o
+        api_key: ${env:AZURE_OPENAI_API_KEY}
+        api_version: ${env:AZURE_OPENAI_API_VERSION}
+        azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    parameters:
+        temperature: 0.1
+        response_format: {"type": "json_object"}
+inputs:
+    response:
+        type: string
+outputs:
+    score:
+        type: int
+    explanation:
+        type: string
+
+---
+system:
+Friendliness assesses the warmth and approachability of the answer.
+
+user:
+Rate the friendliness of the response between one to five stars using the following scale:
+One star: The response is unfriendly or hostile.
+Two stars: The response is mostly unfriendly.
+Three stars: The response is neutral.
+Four stars: The response is mostly friendly.
+Five stars: The response is very friendly.
+
+This rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.
+
+response: I just don't feel like helping you! Your questions are getting very annoying.
+assistant: Your flight XY123 has been cancelled. You can rebook on the next available flight or request a refund. Please visit our webiste for more information.
+output: {"score": 1, "explanation": "The response is not warm and is resisting to be providing helpful information."}
+
+response: I'm sorry this watch is not working for you. Very happy to assist you with a replacement.
+output: {"score": 5, "explanation": "The response is warm and empathetic, offering a resolution with care."}
+
+Here is the conversation to be scored:
+
+response: {{response}}
+output:
