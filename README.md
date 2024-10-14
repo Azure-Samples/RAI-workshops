@@ -1,4 +1,4 @@
-# Azure AI Content Safety Module Resources
+# Responsible AI Workshop Resources
 
 This repository contains sample code and assets for Responsible AI training modules on [Microsoft Learn](https://learn.microsoft.com/training).
 
