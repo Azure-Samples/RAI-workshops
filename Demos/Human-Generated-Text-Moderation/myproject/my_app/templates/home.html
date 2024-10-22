@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoso Tent - Premium Outdoor Gear</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .product-container {
+            display: flex;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .product-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .product-info h1 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #e67e22;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .feature i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .comment-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment-section h2 {
+            color: var(--primary-color);
+        }
+
+        .comment {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 10px 0;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3a7bd5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contoso Outdoor Gear</h1>
+    </header>
+    <div class="container">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="{% static 'my_app/tent.jpeg' %}" alt="Contoso Tent">
+            </div>
+            <div class="product-info">
+                <h1>Contoso Tent</h1>
+                <p>This vibrant outdoor tent combines function and style with its eye-catching yellow and green design. Ideal for camping, hiking, or any outdoor adventure, it features a durable, weather-resistant fabric that ensures protection from rain and wind. The spacious interior comfortably fits up to four people, with a double-layered construction for added insulation and ventilation.</p>
+                <div class="price">$350</div>
+                <a href="#" class="buy-button">Add to Cart</a>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-users"></i> Fits up to 4 people
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-umbrella"></i> Weather-resistant
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wind"></i> Optimal ventilation
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-feather"></i> Lightweight design
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-section">
+            <h2>Customer Reviews</h2>
+            {% for comment in comments %}
+            <div class="comment">
+                <p>{{ comment.text }}</p>
+                <small>{{ comment.created_at }}</small>
+            </div>
+            {% endfor %}
+            <h3>Add a Review</h3>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
