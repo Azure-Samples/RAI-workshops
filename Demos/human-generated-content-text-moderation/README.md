@@ -4,8 +4,6 @@
 
 Contoso Outdoor Gear would like to apply content moderation to their customer review feature on their website. This demo uses the [Azure AI Content Safety client library for Python](https://pypi.org/project/azure-ai-contentsafety/), specifically the Text Analysis API.
 
-![A screenshot of the customer review feature on the Contoso Outdoor Gear e-commerce site.](images/contoso-outdoors-customer-feedback.png)
-
 ## Prerequisites
 
 Running the demo requires the following:
@@ -34,6 +32,8 @@ Running the demo requires the following:
 
 You can enter a comment into the **Text** box and press **Submit Review** to post. If the comment is safe (i.e. the comment is not triggered by the text moderation system), the comment will post. However, if the comment is harmful (i.e. it triggers at least one of the [harm categories](https://aka.ms/harm-categories)), a message displays indicating that the content is not allowed.
 
+![A screenshot of the customer review feature on the Contoso Outdoor Gear e-commerce site.](images/contoso-outdoors-customer-feedback.png)
+
 ## How to remove comments
 
 Comments are stored locally within the project database. You can remove the comments in the sample via the Django Shell by running the following commands in the terminal:
@@ -47,4 +47,4 @@ Comments are stored locally within the project database. You can remove the comm
 
 This sample is created within a [Django](https://www.djangoproject.com/) project. If you're unfamiliar with Django, it's recommended to review the Django [documentation](https://docs.djangoproject.com/5.1/).
 
-The `moderate_content.py` file contains the logic for the moderation system. You can customize both the conditional logic and output text for the text moderation feature wihtin lines 39 - 49.
+The `moderate_content.py` file contains the logic for the moderation system. You can customize both the conditional logic and output text for the text moderation feature within lines 39 - 49.
