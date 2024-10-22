@@ -1,10 +1,10 @@
 # Scenario
 
-:::image type="content" source="images/contoso-outdoors-product-page.png" alt-text="A screenshot of the Contoso Outdoor Gear product page for the Contoso Tent.":::
+![A screenshot of the Contoso Outdoor Gear product page for the Contoso Tent.](images/contoso-outdoors-product-page.png)
 
 Contoso Outdoor Gear would like to apply content moderation to their customer review feature on their website. This demo uses the [Azure AI Content Safety client library for Python](https://pypi.org/project/azure-ai-contentsafety/), specifically the Text Analysis API.
 
-:::image type="content" source="images/contoso-outdoors-customer-feedback.png" alt-text="A screenshot of the customer review feature on the Contoso Outdoor Gear e-commerce site.":::
+![A screenshot of the customer review feature on the Contoso Outdoor Gear e-commerce site.](images/contoso-outdoors-customer-feedback.png)
 
 ## Prerequisites
 
