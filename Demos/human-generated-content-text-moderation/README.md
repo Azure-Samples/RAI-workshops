@@ -2,7 +2,7 @@
 
 :::image type="content" source="images/contoso-outdoors-product-page.png" alt-text="A screenshot of the Contoso Outdoor Gear product page for the Contoso Tent.":::
 
-Contoso Outdoor Gear would like to apply content moderation to their customer review feature on their website.
+Contoso Outdoor Gear would like to apply content moderation to their customer review feature on their website. This demo uses the [Azure AI Content Safety client library for Python](https://pypi.org/project/azure-ai-contentsafety/), specifically the Text Analysis API.
 
 :::image type="content" source="images/contoso-outdoors-customer-feedback.png" alt-text="A screenshot of the customer review feature on the Contoso Outdoor Gear e-commerce site.":::
 
@@ -20,15 +20,15 @@ Running the demo requires the following:
     1. **Fork**: In the repository, select the **Fork** and select **Create fork**.
 1. Open the repository files or the fork inside Visual Studio Code.
     1. **Download**: In Visual Studio Code, select **File** > **Open Folder** and select the unzipped repository file.
-    1. **Fork**: In Visual Studio Code, press the short `CMD/CTRL+SHIFT+P` and select `Git: Clone`. Enter or select the URL for your fork.
+    1. **Fork**: In Visual Studio Code, enter the shortcut **CMD/CTRL+SHIFT+P** and select **Git: Clone**. Enter or select the URL for your fork.
 1. At the root of the project, create a `.env` file and add an entry for the following environment variables:
     1. `CONTENT_SAFETY_KEY=<Your Content Safety Key>`
     1. `CONTENT_SAFETY_ENDPOINT="<Your Content Safety Endpoint>"`
-1. Create a virtual environment.
-1. Open the terminal and enter the command `pip install -r requirements.txt`.
-1. In the terminal, navigate into myproject with the command: `cd myproject`.
+1. To avoid installing the packages globally, it's recommended to create a virtual environment. You can quickly create and activate a virtual environment in Visual Studio Code by opening a Python file and selecting the Python version in the bottom status bar. This action opens the **Select Interpreter** window. In the **Select Interpreter** window, select **Create Virtual Environment** and follow the steps. Upon completion the virtual environment will be created and activated. You can open the `moderate_content.py` file to start the process. The `moderate_content.py` file is located within `Demos\human-generated-content-text-moderation\myproject`.
+1. You'll now install the required packages. Open the terminal and enter the command `pip install -r requirements.txt`.
+1. In the terminal, navigate into `myproject` with the command: `cd demos/human-generated-content-text-moderation/myproject`.
 1. In the terminal, run the command: `python manage.py runserver`
-1. Click the link in the terminal to view the webpage locally.
+1. After the server starts, you're provided with a URL to view the webpage. Click the link in the terminal to view the webpage locally.
 
 ## How to demo the sample
 
