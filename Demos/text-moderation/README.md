@@ -22,9 +22,9 @@ Running the demo requires the following:
 1. At the root of the project, create a `.env` file and add an entry for the following environment variables:
     1. `CONTENT_SAFETY_KEY=<Your Content Safety Key>`
     1. `CONTENT_SAFETY_ENDPOINT="<Your Content Safety Endpoint>"`
-1. To avoid installing the packages globally, it's recommended to create a virtual environment. You can quickly create and activate a virtual environment in Visual Studio Code by opening a Python file and selecting the Python version in the bottom status bar. This action opens the **Select Interpreter** window. In the **Select Interpreter** window, select **Create Virtual Environment** and follow the steps. Upon completion the virtual environment will be created and activated. You can open the `moderate_content.py` file to start the process. The `moderate_content.py` file is located within `Demos\human-generated-content-text-moderation\myproject`.
+1. To avoid installing the packages globally, it's recommended to create a virtual environment. You can quickly create and activate a virtual environment in Visual Studio Code by opening a Python file and selecting the Python version in the bottom status bar. This action opens the **Select Interpreter** window. In the **Select Interpreter** window, select **Create Virtual Environment** and follow the steps. Upon completion the virtual environment will be created and activated. You can open the `moderate_content.py` file to start the process. The `moderate_content.py` file is located within `Demos\text-moderation\myproject`.
 1. You'll now install the required packages. Open the terminal and enter the command `pip install -r requirements.txt`.
-1. In the terminal, navigate into `myproject` with the command: `cd demos/human-generated-content-text-moderation/myproject`.
+1. In the terminal, navigate into `myproject` with the command: `cd demos/text-moderation/myproject`.
 1. In the terminal, run the command: `python manage.py runserver`
 1. After the server starts, you're provided with a URL to view the webpage. Click the link in the terminal to view the webpage locally.
 

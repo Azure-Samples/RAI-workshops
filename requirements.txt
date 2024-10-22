@@ -4,3 +4,4 @@ requests
 python-dotenv
 ipython
 ipykernel
+django
