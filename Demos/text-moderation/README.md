@@ -41,7 +41,7 @@ You can enter a comment into the **Text** box and press **Submit Review** to pos
 Comments are stored locally within the project database. You can remove the comments in the sample via the Django Shell by running the following commands in the terminal:
 
 1. Open the Django shell: `python manage.py shell`
-1. Import the Comment model: `from myapp.models import Comment`
+1. Import the Comment model: `from my_app.models import Comment`
 1. Delete all comments: `Comment.objects.all().delete()`
 1. Exit the shell: `exit()`
 
