@@ -16,10 +16,12 @@ Running the demo requires the following:
 ## How to start the sample
 
 1. Download or fork the [RAI Workshops](https://www.github.com/azure-samples/RAI-workshops) repository.
-    1. Download:
-    1. Fork:
+    1. **Download**: In the repository, select the **Code** drop-down followed by **Download ZIP**. Unzip the downloaded file.
+    1. **Fork**: In the repository, select the **Fork** and select **Create fork**.
 1. Open the repository files or the fork inside Visual Studio Code.
-1. Create a `.env` file and add an entry for the following environment variables:
+    1. **Download**: In Visual Studio Code, select **File** > **Open Folder** and select the unzipped repository file.
+    1. **Fork**: In Visual Studio Code, press the short `CMD/CTRL+SHIFT+P` and select `Git: Clone`. Enter or select the URL for your fork.
+1. At the root of the project, create a `.env` file and add an entry for the following environment variables:
     1. `CONTENT_SAFETY_KEY=<Your Content Safety Key>`
     1. `CONTENT_SAFETY_ENDPOINT="<Your Content Safety Endpoint>"`
 1. Create a virtual environment.
