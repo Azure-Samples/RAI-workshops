@@ -17,10 +17,16 @@ from openai import AzureOpenAI
 from typing import List, Tuple, TypedDict
 
 
-os.environ['AZURE_OPENAI_ENDPOINT'] = 'Your Azure OpenAI endpoint'
-os.environ['AZURE_OPENAI_API_KEY'] = 'Your Azure OpenAI API key'
-os.environ['AZURE_DEPLOYMENT'] = 'Your Azure OpenAI deployment name'
-os.environ['AZURE_OPENAI_API_VERSION'] = 'The OpenAI API version'
+from dotenv import load_dotenv
+
+load_dotenv()
+
+import azure.identity
+
+credential = azure.identity.DefaultAzureCredential()
+token_provider = azure.identity.get_bearer_token_provider(credential, "https://cognitiveservices.azure.com/.default")
+
+token = token_provider()
 
 # Create a session for making HTTP requests
 session = requests.Session()
@@ -165,18 +171,18 @@ def process_search_result(search_result: List[Tuple[str, str]]) -> str:
 
 
 # Function to perform augmented QA
-def augemented_qa(query: str, context: str) -> str:
+def augmented_qa(query: str, context: str) -> str:
     system_message = system_message_template.render(contexts=context)
 
     messages = [{"role": "system", "content": system_message}, {"role": "user", "content": query}]
 
     with AzureOpenAI(
         azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-        api_key=os.environ["AZURE_OPENAI_API_KEY"],
+        api_key= token,
         api_version=os.environ["AZURE_OPENAI_API_VERSION"],
     ) as client:
         response = client.chat.completions.create(
-            model=os.environ.get("AZURE_OPENAI_DEPLOYMENT"), messages=messages, temperature=0.7, max_tokens=800
+            model=os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME"), messages=messages, temperature=0.7, max_tokens=800
         )
 
         return response.choices[0].message.content
@@ -194,7 +200,7 @@ def ask_wiki(query: str) -> Response:
     url_list = get_wiki_url(query, count=2)
     search_result = search_result_from_url(url_list, count=10)
     context = process_search_result(search_result)
-    response = augemented_qa(query, context)
+    response = augmented_qa(query, context)
 
     return {"response": response, "context": str(context)}
 
